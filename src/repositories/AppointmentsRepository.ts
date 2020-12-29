@@ -11,7 +11,7 @@ class AppointmentsRepository {
     private appointmentsRepository: Appointment[];
 
     constructor() {
-        this.appointmentsRepository = []
+        this.appointmentsRepository = [];
     }
 
     public all(): Appointment[] {
@@ -21,18 +21,20 @@ class AppointmentsRepository {
     }
 
     public create({ provider, date }: CreateAppointmentDTO): Appointment {
-        const appointment = new Appointment({ provider, date});
+        const appointment = new Appointment({ provider, date });
 
         this.appointmentsRepository.push(appointment);
 
         return appointment;
-      };
+    }
 
     public findByDate(date: Date): Appointment | null {
-        const appointment = this.appointmentsRepository.find(appointment => isEqual(appointment.date, date));
+        const appointmentDate = this.appointmentsRepository.find(appointment =>
+            isEqual(appointment.date, date),
+        );
 
-        return appointment || null;
-    };
-};
+        return appointmentDate || null;
+    }
+}
 
 export default AppointmentsRepository;
