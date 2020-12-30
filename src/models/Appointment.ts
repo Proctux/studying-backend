@@ -1,5 +1,7 @@
 import { uuid } from 'uuidv4';
+import { Entity } from 'typeorm';
 
+@Entity('appointments')
 class Appointment {
     id: string;
 
@@ -12,6 +14,6 @@ class Appointment {
         this.provider = provider;
         this.date = date;
     }
-};
+}
 
 export default Appointment;
