@@ -16,6 +16,7 @@ export default class AlterProviderFieldToProviderId1609374346903
                 name: 'provider_id',
                 type: 'uuid',
                 generationStrategy: 'uuid',
+                isNullable: true,
                 default: 'uuid_generate_v4()',
             }),
         );
